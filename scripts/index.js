@@ -1,4 +1,4 @@
-
+import store from './store.js';
 import shoppingList from './shopping-list.js';
 
 const main = function () {
