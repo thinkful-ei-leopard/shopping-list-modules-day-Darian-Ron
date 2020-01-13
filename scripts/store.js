@@ -23,6 +23,7 @@ function addItem(name) {
 
 function findAndToggleChecked(id) {
     let item = this.findById(id);
+    console.log (item);
     item.checked = !item.checked;
 };
 
