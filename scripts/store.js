@@ -21,6 +21,7 @@ function addItem(name) {
     }
 };
 
+/**************************THIS WASNT WORKING WHEN WE STOPPED YESTERDAY, RETURNED UNDEFINED ***********/
 function findAndToggleChecked(id) {
     let item = this.findById(id);
     console.log (item);
