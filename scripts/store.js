@@ -7,9 +7,8 @@ const store = {
 
 function findById(id) {
     //console.log(id);
-    // let itemReturn = store.items.find(item => item.id === id);
-    //console.log(itemReturn);
-    let someId = store.items[0].id;
+    let itemReturn = store.items.find(item => item.id === id);
+    console.log(itemReturn)
     return store.items.find(item => item[id] === id);
 };
 
@@ -38,20 +37,16 @@ function findAndUpdateName(id, newName) {
 };
 
 function findAndDelete(id) {
-    // finds an itme by its Id
-    let caughtItem = this.findById(id);
-    console.log(caughtItem);
+
+    console.log(`FindAndDelete caughtItem: ${id}`);
     // find the index of said item
     let itemIndex = this.items.findIndex(element => {
-        element === caughtItem;
+        console.log(element.id);
+        return element.id === id;
     });
+    console.log(itemIndex);
     // remove item from the array
     this.items.splice(itemIndex, 1);
-
-    // FILTER WAY
-    // this.items.filter(element => {
-    //     element !== caughtItem;
-    // });
 };
 
 export default {
