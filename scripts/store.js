@@ -6,10 +6,13 @@ const store = {
   };
 
 function findById(id) {
-    //console.log(id);
     let itemReturn = store.items.find(item => item.id === id);
-    console.log(itemReturn)
-    return store.items.find(item => item[id] === id);
+    // logs: findById itemReturn is [object Object] and its type is object
+    console.log(`findById itemReturn is: ${itemReturn} and its type is ${typeof(itemReturn)}`);
+    // THIS fixed it. Trying to return directly with store.items.find() was returning [Object object],
+    // but saving the value to a variable and returning that variable worked.
+    return itemReturn;
+    // return store.items.find(item => item[id] === id); <-- old code looked like this only.
 };
 
 function addItem(name) {
@@ -21,11 +24,17 @@ function addItem(name) {
     }
 };
 
-/**************************THIS WASNT WORKING WHEN WE STOPPED YESTERDAY, RETURNED UNDEFINED ***********/
+/**************************THIS WASNT WORKING WHEN WE STOPPED YESTERDAY, RETURNED UNDEFINED. FIXED! ***********/
 function findAndToggleChecked(id) {
+    // let item = this.findById(id);
     let item = this.findById(id);
     console.log (item);
-    item.checked = !item.checked;
+    item.checked = !item.checked; // <-- this was here orignally, below was not
+    // if(item.checked === false) {
+    //     item.checked = true;
+    // } else {
+    //     item.checked = false;
+    // }
 };
 
 function findAndUpdateName(id, newName) {

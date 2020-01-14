@@ -69,7 +69,8 @@
   const handleItemCheckClicked = function () {
     $('.js-shopping-list').on('click', '.js-item-toggle', event => {
       const id = getItemIdFromElement(event.currentTarget);
-      store.findAndToggleChecked();
+      store.findAndToggleChecked(id);
+      //store.findAndToggleChecked();  <-- this was originally here
       render();
     });
   };
