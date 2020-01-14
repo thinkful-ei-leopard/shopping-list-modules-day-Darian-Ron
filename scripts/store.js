@@ -29,12 +29,7 @@ function findAndToggleChecked(id) {
     // let item = this.findById(id);
     let item = this.findById(id);
     console.log (item);
-    item.checked = !item.checked; // <-- this was here orignally, below was not
-    // if(item.checked === false) {
-    //     item.checked = true;
-    // } else {
-    //     item.checked = false;
-    // }
+    item.checked = !item.checked; 
 };
 
 function findAndUpdateName(id, newName) {
