@@ -4,6 +4,7 @@ const store = {
     items: [],
     hideCheckedItems: false,
     toggleCheckedFilter(){
+        console.log('toggle checked filter is working');
         this.hideCheckedItems = !this.hideCheckedItems;
     }
   };
@@ -67,6 +68,6 @@ export default {
     findAndToggleChecked,
     findAndUpdateName,
     findAndDelete,
-    toggleCheckedFilter() {}
+    toggleCheckedFilter: store.toggleCheckedFilter
 };
 
